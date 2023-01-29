@@ -23,7 +23,7 @@ export default function ThemeToggle() {
   useEffect(() => {
     const root = document.documentElement
     //intentionally having them backwards as a design choice
-    if (theme === 'lightmode') {
+    if (theme === 'darkmode') {
       root.classList.add('dark')
     } else {
       root.classList.remove('dark')
@@ -34,6 +34,8 @@ export default function ThemeToggle() {
     setIsMounted(true)
   }, [])
 
+
+
   return isMounted ? (
     <>
       <div className="flex justify-start pt-1">
@@ -43,17 +45,10 @@ export default function ThemeToggle() {
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >
-          {`<button`}
-          <br />
-          {`key="`}
-          {theme}{`"`}
-          <br />
-          {`className="`}{theme}{`"`}
-          <br />
-          {`onClick={toggleTheme}`}
-          <br />
-          {`aria-label="Toggle theme"`}
-          {`>click me!</button>`}
+        {'Click me to '}
+        {theme === 'lightmode' && 'relax yourself!'}
+        {theme === 'darkmode' && 'brighten your day!'}
+
         </button>
         <br />
       </div>

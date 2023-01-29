@@ -1,0 +1,18 @@
+---
+import BuildWordE from '../../api/BuildWordE';
+
+const data = await BuildWordE();
+
+const lukeArray = data.name.split('').map((e: string) => {
+  if (e == 'e') {
+    return e;
+  }
+});
+const cleanLukeArray = lukeArray
+  .filter((e: 'e' | undefined, index: number) => {
+    return lukeArray.indexOf(e) === index;
+  })
+  .find((e: string | undefined) => e == 'e');
+---
+
+{cleanLukeArray}
