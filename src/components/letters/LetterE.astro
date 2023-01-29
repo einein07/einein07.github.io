@@ -12,7 +12,11 @@ const cleanLukeArray = lukeArray
   .filter((e: 'e' | undefined, index: number) => {
     return lukeArray.indexOf(e) === index;
   })
-  .find((e: string | undefined) => e == 'e');
+  .find((e: string | undefined) => e === 'e');
+
+if (cleanLukeArray) {
+  return cleanLukeArray.trim();
+}
 ---
 
 {cleanLukeArray}
