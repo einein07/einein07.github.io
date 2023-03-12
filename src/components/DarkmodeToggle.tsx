@@ -22,7 +22,6 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const root = document.documentElement
-    //intentionally having them backwards as a design choice
     if (theme === 'darkmode') {
       root.classList.add('dark')
     } else {
@@ -45,9 +44,9 @@ export default function ThemeToggle() {
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >
-        {'Click me to '}
-        {theme === 'lightmode' && 'relax yourself!'}
-        {theme === 'darkmode' && 'brighten your day!'}
+          {'Click me to '}
+          {theme === 'lightmode' && 'relax yourself!'}
+          {theme === 'darkmode' && 'brighten your day!'}
 
         </button>
         <br />
